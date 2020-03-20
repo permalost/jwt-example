@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: local
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: https://cognito-idp.${cloud.aws.region}.amazonaws.com/${cloud.aws.pool}/.well-known/jwks.json
+
+cloud:
+  aws:
+    region: us-west-2
+    pool: <redacted>
+
+server:
+  port: 9999
